@@ -19,8 +19,8 @@ do
   | jq -r '.[].full_name' ))
 
   # 最後まで取得し切ったらループ終了
-  # https://stackoverflow.com/a/61551944/4506703
-  if [[ -z ${result[@]+"${result[@]}"} ]]; then
+  # https://serverfault.com/a/477506/966063
+  if [[ ${#result[@]} -eq 0 ]]; then
     break
   fi
 
@@ -36,7 +36,7 @@ do
   page=$((++page))
 done
 
-if [[ -z ${targets[@]+"${targets[@]}"} ]]; then
+if [[ ${#targets[@]} -eq 0 ]]; then
   exit 0
 fi
 for target in "${targets[@]}"
