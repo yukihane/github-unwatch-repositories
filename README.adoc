@@ -18,9 +18,15 @@ private リポジトリも対象にする場合は、 **repo** にチェック�
 
 スクリプトを実行します。引数は次の通り指定します。
 
-[source,sh]
+[source, sh]
 ----
 ./unsubscribe-github-repositories.bash [リポジトリ名パターン] [アカウント名] [上記で生成したトークン]
+----
+
+例:
+[source, sh]
+----
+./unsubscribe-github-repositories.bash ^yukihane/ yukihane xxxxxxxx
 ----
 
 実行が成功すると、 unsubscribe 対象のリポジトリが標準出力されます。
@@ -29,7 +35,7 @@ private リポジトリも対象にする場合は、 **repo** にチェック�
 
 先程のコマンドに引数 `run` を加えると、 unsubscribe 要求を実際に送信します。
 
-[source,sh]
+[source, sh]
 ----
 ./unsubscribe-github-repositories.bash [リポジトリ名パターン] [アカウント名] [上記で生成したトークン] run
 ----
