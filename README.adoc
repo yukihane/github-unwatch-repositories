@@ -16,6 +16,8 @@ If treating only public repositories, needs any checks.
 
 === Execute
 
+Execute dry-run.
+
 [source, sh]
 ----
 ./github-unwatch.bash [repository name pattern] [your account name] [token]
@@ -23,8 +25,6 @@ If treating only public repositories, needs any checks.
 
 example:
 [source, sh]
-
-Execute dry-run.
 ----
 ./github-unwatch.bash ^yukihane/ yukihane xxxxxxxx
 ----
