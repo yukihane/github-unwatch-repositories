@@ -1,0 +1,39 @@
+== What's This
+
+Bash script for batch unwatching GitHub repositories.
+
+Target name is specified by regular expression.
+
+== Usage
+
+=== Generate Token
+
+Generate token on https://github.com/settings/tokens .
+
+If treating private repositories, needs **repo** scope checked.
+
+If treating only public repositories, needs any checks.
+
+=== Execute
+
+[source, sh]
+----
+./github-unwatch.bash [repository name pattern] [your account name] [token]
+----
+
+example:
+[source, sh]
+
+Execute dry-run.
+----
+./github-unwatch.bash ^yukihane/ yukihane xxxxxxxx
+----
+
+When succeeded, target repositories are listed.
+
+Next, unwatch actually, with `run` argument.
+
+[source, sh]
+----
+./github-unwatch.bash [repository name pattern] [your account name] [token] run
+----
