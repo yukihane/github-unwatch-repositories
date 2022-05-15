@@ -1,5 +1,11 @@
 #! /bin/bash
 
+# dry run:
+# ./github-unwatch.bash [unwatch repository pattern] [github account] [github token]
+#
+# execute actually:
+# ./github-unwatch.bash [unwatch repository pattern] [github account] [github token] run
+
 set -eu
 
 readonly REPOSITORY_PATTERN="$1"
@@ -27,7 +33,6 @@ do
   # 対象のリポジトリを抽出
   for e in "${result[@]}"
   do
-    # echo $e
     if [[ $e =~ $REPOSITORY_PATTERN ]]; then
       targets+=($e)
     fi
@@ -41,7 +46,7 @@ if [[ ${#targets[@]} -eq 0 ]]; then
 fi
 for target in "${targets[@]}"
 do
-  echo "delete subscripton: $target"
+  echo "Unwatch: $target"
   if [[ "$RUN" == "run" ]]; then
     # https://docs.github.com/en/rest/activity/watching#delete-a-repository-subscription
     curl \
